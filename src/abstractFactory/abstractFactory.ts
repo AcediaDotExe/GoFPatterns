@@ -54,7 +54,7 @@ interface PersonFactory {
 }
 
 class TaxiPersonFactory implements PersonFactory {
-  createDriver(name: string){
+  createDriver(name: string) {
     return new TaxiDriver(name);
   }
 
@@ -77,7 +77,7 @@ interface Car {
   id: number;
   driver: Driver | undefined;
   passengers: Array<Passenger>;
-  isReady: boolean
+  isReady: boolean;
   addDriver(driver: Driver): void;
 
   addPassenger(passenger: Passenger): void;
@@ -158,7 +158,6 @@ class TaxiCar implements Car {
     this._isReady =
       this._driver && this._passengers.length === 4 ? true : false;
   }
-
 }
 
 class BusCar implements Car {
@@ -280,7 +279,7 @@ function main(): void {
   }
 
   moscowAgency.info();
-  let mda: TaxiCar = new TaxiCar(4)
+  let mda: TaxiCar = new TaxiCar(4);
 }
 
 main();
