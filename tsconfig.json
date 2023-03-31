@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
     "strictPropertyInitialization": false,
-    "target": "es5",
-    "module": "CommonJS"
-  }
+    "module": "CommonJS",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "outDir": "./funnyThing)"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

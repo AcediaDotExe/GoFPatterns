@@ -1,7 +1,7 @@
-import {Passenger} from "./Passenger";
+import { Passenger } from "./Passenger";
 
 export class AdultPassenger extends Passenger {
-    constructor(name: string) {
-        super(name);
-    }
+  constructor(name: string) {
+    super(name);
+  }
 }

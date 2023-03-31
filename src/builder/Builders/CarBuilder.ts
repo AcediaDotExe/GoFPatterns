@@ -1,16 +1,16 @@
-import {Passenger} from "../Passenger";
-import {Car} from "../Car";
+import { Passenger } from "../Passenger";
+import { Car } from "../Car";
 
 export interface CarBuilder {
-    addId(id: number): CarBuilder;
+  addId(id: number): CarBuilder;
 
-    addDriver(name: string): CarBuilder;
+  addDriver(name: string): CarBuilder;
 
-    addPassenger(passenger: Passenger): CarBuilder;
+  addPassenger(passenger: Passenger): CarBuilder;
 
-    addPassengers(): CarBuilder;
+  addPassengers(): CarBuilder;
 
-    addBabyChair(): CarBuilder;
+  addBabyChair(): CarBuilder;
 
-    build(): Car | null;
+  build(): Car | null;
 }

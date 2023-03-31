@@ -1,3 +1,3 @@
 export interface Driver {
-    name: string;
+  name: string;
 }
