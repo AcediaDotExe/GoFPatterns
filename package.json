@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
-    "run": "ts-node src/builder/builder.ts -T"
+    "run": "ts-node src/composite/composite.ts -T"
   },
   "repository": {
     "type": "git",
