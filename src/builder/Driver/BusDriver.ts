@@ -1,17 +1,17 @@
-import {Driver} from "./Driver";
+import { Driver } from "./Driver";
 
 export class BusDriver implements Driver {
-    constructor(name: string) {
-        this._name = name;
-    }
+  constructor(name: string) {
+    this._name = name;
+  }
 
-    private _name: string;
+  private _name: string;
 
-    get name(): string {
-        return this._name;
-    }
+  get name(): string {
+    return this._name;
+  }
 
-    set name(value: string) {
-        this._name = value;
-    }
+  set name(value: string) {
+    this._name = value;
+  }
 }

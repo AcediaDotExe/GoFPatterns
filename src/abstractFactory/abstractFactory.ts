@@ -3,47 +3,50 @@ interface Driver {
 }
 
 class BusDriver implements Driver {
+  constructor(name: string) {
+    this._name = name;
+  }
+
   private _name: string;
 
   get name(): string {
     return this._name;
   }
+
   set name(value: string) {
     this._name = value;
-  }
-
-  constructor(name: string) {
-    this._name = name;
   }
 }
 
 class TaxiDriver implements Driver {
+  constructor(name: string) {
+    this._name = name;
+  }
+
   private _name: string;
 
   get name(): string {
     return this._name;
   }
+
   set name(value: string) {
     this._name = value;
-  }
-
-  constructor(name: string) {
-    this._name = name;
   }
 }
 
 class Passenger {
+  constructor(name: string) {
+    this._name = name;
+  }
+
   private _name: string;
 
   get name(): string {
     return this._name;
   }
+
   set name(value: string) {
     this._name = value;
-  }
-
-  constructor(name: string) {
-    this._name = name;
   }
 }
 
@@ -78,6 +81,7 @@ interface Car {
   driver: Driver | undefined;
   passengers: Array<Passenger>;
   isReady: boolean;
+
   addDriver(driver: Driver): void;
 
   addPassenger(passenger: Passenger): void;
@@ -88,27 +92,12 @@ interface Car {
 }
 
 class TaxiCar implements Car {
-  get isReady(): boolean {
-    return this._isReady;
+  constructor(id: number) {
+    this.id = id;
   }
 
-  set isReady(value: boolean) {
-    this._isReady = value;
-  }
-  get passengers(): Array<Passenger> {
-    return this._passengers;
-  }
+  private _id: number;
 
-  set passengers(value: Array<Passenger>) {
-    this._passengers = value;
-  }
-  get driver(): TaxiDriver | undefined {
-    return this._driver;
-  }
-
-  set driver(value: TaxiDriver | undefined) {
-    this._driver = value;
-  }
   get id(): number {
     return this._id;
   }
@@ -116,13 +105,35 @@ class TaxiCar implements Car {
   set id(value: number) {
     this._id = value;
   }
-  private _id: number;
+
   private _driver: TaxiDriver | undefined;
+
+  get driver(): TaxiDriver | undefined {
+    return this._driver;
+  }
+
+  set driver(value: TaxiDriver | undefined) {
+    this._driver = value;
+  }
+
   private _passengers: Array<Passenger> = [];
+
+  get passengers(): Array<Passenger> {
+    return this._passengers;
+  }
+
+  set passengers(value: Array<Passenger>) {
+    this._passengers = value;
+  }
+
   private _isReady: boolean = false;
 
-  constructor(id: number) {
-    this.id = id;
+  get isReady(): boolean {
+    return this._isReady;
+  }
+
+  set isReady(value: boolean) {
+    this._isReady = value;
   }
 
   addDriver(driver: TaxiDriver): void {
@@ -161,27 +172,12 @@ class TaxiCar implements Car {
 }
 
 class BusCar implements Car {
-  get isReady(): boolean {
-    return this._isReady;
+  constructor(id: number) {
+    this._id = id;
   }
 
-  set isReady(value: boolean) {
-    this._isReady = value;
-  }
-  get passengers(): Array<Passenger> {
-    return this._passengers;
-  }
+  private _id: number;
 
-  set passengers(value: Array<Passenger>) {
-    this._passengers = value;
-  }
-  get driver(): BusDriver | undefined {
-    return this._driver;
-  }
-
-  set driver(value: BusDriver | undefined) {
-    this._driver = value;
-  }
   get id(): number {
     return this._id;
   }
@@ -189,13 +185,35 @@ class BusCar implements Car {
   set id(value: number) {
     this._id = value;
   }
-  private _id: number;
+
   private _driver: BusDriver | undefined;
+
+  get driver(): BusDriver | undefined {
+    return this._driver;
+  }
+
+  set driver(value: BusDriver | undefined) {
+    this._driver = value;
+  }
+
   private _passengers: Array<Passenger> = [];
+
+  get passengers(): Array<Passenger> {
+    return this._passengers;
+  }
+
+  set passengers(value: Array<Passenger>) {
+    this._passengers = value;
+  }
+
   private _isReady: boolean = false;
 
-  constructor(id: number) {
-    this._id = id;
+  get isReady(): boolean {
+    return this._isReady;
+  }
+
+  set isReady(value: boolean) {
+    this._isReady = value;
   }
 
   addDriver(driver: BusDriver): void {
