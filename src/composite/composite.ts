@@ -2,9 +2,7 @@ import { AirplaneUnit } from "./Compound";
 import { Passenger, Pilot, Stewardess } from "./Leafs";
 
 (function main() {
-  generateAirplane("KillMePls",
-      4000, 2, 6,
-      10, 20, 150);
+  generateAirplane("KillMePls", 4000, 2, 6, 10, 20, 150);
 })();
 
 function generateAirplane(
@@ -48,7 +46,7 @@ function generateAirplane(
     "FirstClass",
     maxAirplaneLuggageSize,
     maxFirstClassPassengers,
-    Infinity
+    maxAirplaneLuggageSize
   );
   for (let i = 0; i < maxFirstClassPassengers + 1; i++) {
     firstClassPassengers.add(new Passenger("Steak" + i, 60));
@@ -69,16 +67,12 @@ function generateAirplane(
     maxAirplaneLuggageSize,
     maxEconomyClassPassengers,
     20,
-      true
+    true
   );
   for (let i = 0; i < maxEconomyClassPassengers - 1; i++) {
-    economyClassPassengers.add(
-      new Passenger("Sausage" + i, 20)
-    );
+    economyClassPassengers.add(new Passenger("Sausage" + i, 20));
   }
-  economyClassPassengers.add(new Passenger("BigBOY", 30))
-
-
+  economyClassPassengers.add(new Passenger("BigBOY", 30));
 
   airplane.add(pilots);
   airplane.add(stewards);

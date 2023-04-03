@@ -8,4 +8,12 @@ export class Pilot extends Human implements AirplaneComponent {
     super(name);
     this.pilotPassID = pilotPassID;
   }
+
+  public getLuggageSize(): number {
+    return 0;
+  }
+
+  public setLuggageSize(): number {
+    return 0;
+  }
 }
