@@ -12,4 +12,8 @@ export class Passenger {
   set name(value: string) {
     this._name = value;
   }
+
+  public setLuggageSize(): number {
+    return 0;
+  }
 }

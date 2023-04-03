@@ -6,15 +6,18 @@ export class Passenger extends Human implements AirplaneComponent {
 
   constructor(name: string, luggageSize: number) {
     super(name);
-    this.luggageSize = luggageSize;
+    this.setLuggageSize(luggageSize);
   }
 
-  get luggageSize(): number {
+  public getLuggageSize(): number {
     return this._luggageSize;
   }
 
-  set luggageSize(value: number) {
-    if (value >= 0 && value <= 60) this._luggageSize = value;
-    else console.log(`Incorrect size for ${this.name} passenger: ${value} kg`);
+  public setLuggageSize(luggageSize: number): void {
+    if (luggageSize >= 0 && luggageSize <= 60) this._luggageSize = luggageSize;
+    else
+      console.log(
+        `Incorrect size for ${this.name} passenger: ${luggageSize} kg`
+      );
   }
 }

@@ -1,6 +1,6 @@
 import { AirplaneComponent } from "../Compound";
 
-export class Human implements AirplaneComponent {
+export class Human {
   public name: string;
 
   constructor(name: string) {

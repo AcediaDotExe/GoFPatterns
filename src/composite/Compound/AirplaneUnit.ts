@@ -37,11 +37,15 @@ export class AirplaneUnit implements AirplaneComponent {
   }
 
   private pushPassenger(unit: Passenger): void {
-    if (unit.luggageSize <= this.maxSubUnitsLuggageSize) {
+    if (unit.getLuggageSize() <= this.maxSubUnitsLuggageSize) {
       this.subUnits.push(unit);
     } else {
-      console.log(`Passenger ${unit.name} with ${unit.luggageSize} kg exceeded the max luggage size
-             for unit ${this.name} with max ${this.maxSubUnitsLuggageSize} kg `);
+      console.log(`Passenger ${
+        unit.name
+      } with ${unit.getLuggageSize()} kg exceeded the max luggage size
+             for unit ${this.name} with max ${
+        this.maxSubUnitsLuggageSize
+      } kg `);
     }
   }
 
@@ -57,18 +61,13 @@ export class AirplaneUnit implements AirplaneComponent {
   public getLuggageSize(): number {
     let size: number = 0;
     for (const unit of this.subUnits) {
-      if (unit instanceof AirplaneUnit) {
-        size += unit.getLuggageSize();
-      }
-      if (unit instanceof Passenger) {
-        size += unit.luggageSize;
-      }
+      size += unit.getLuggageSize();
     }
     return size;
   }
 
   public fixLuggageSize() {
-    while (!this.isLuggageSizeAllowed()){
+    while (!this.isLuggageSizeAllowed()) {
       this.decreaseLuggageSize();
     }
   }
@@ -86,14 +85,14 @@ export class AirplaneUnit implements AirplaneComponent {
   }
 
   private removePassengerLuggage(unit: AirplaneUnit): void {
-      for (const subUnit of unit.subUnits) {
-        if (subUnit instanceof Passenger) {
-          if (subUnit.luggageSize !== 0) {
-            subUnit.luggageSize = 0;
-            console.log(`Passenger ${subUnit.name} luggage removed.`);
-            break;
-          }
-        }
+    for (const subUnit of unit.subUnits) {
+      if (subUnit.getLuggageSize() !== 0) {
+        subUnit.setLuggageSize(0);
+        console.log(`Passenger ${subUnit.name} luggage removed.`);
+        break;
       }
+    }
   }
+
+  setLuggageSize(): void {}
 }

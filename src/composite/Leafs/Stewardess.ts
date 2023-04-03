@@ -8,4 +8,11 @@ export class Stewardess extends Human implements AirplaneComponent {
     super(name);
     this.stewardessID = stewardessID;
   }
+
+  public getLuggageSize(): number {
+    return 0;
+  }
+  public setLuggageSize(): number {
+    return 0;
+  }
 }
